@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg bg-primary py-3">
+    <div class="container">
+      <a class="navbar-brand fs-1  fw-bold text-white">فاينال</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+          <li class="nav-item" *ngIf="user?.role == 'doctor'">
+            <a class="nav-link active fs-5" aria-current="page" routerLink="/new-exam" routerLinkActive="text-white">أختبار جديد</a>
+          </li>
+
+          <li class="nav-item" *ngIf="user?.role == 'doctor'">
+            <a class="nav-link active fs-5" aria-current="page" routerLink="/students" routerLinkActive="text-white">الطلاب</a>
+          </li>
+
+          <li class="nav-item" *ngIf="user!==null" >
+            <a class="nav-link active fs-5" aria-current="page" routerLink="/subjects" routerLinkActive="text-white">المواد </a>
+          </li>
+
+          <li class="nav-item" *ngIf="user!==null" >
+            <a class="nav-link active fs-5" aria-current="page" routerLink="/login" (click)="logout()" routerLinkActive="text-white">خروج</a>
+          </li>
+
+          <li class="nav-item" *ngIf="user==null">
+            <a class="nav-link active fs-5" aria-current="page" routerLink="/login" routerLinkActive="text-white">دخول</a>
+          </li>
+
+          <li class="nav-item" *ngIf="user===null">
+            <a class="nav-link active fs-5" aria-current="page" routerLink="/register"routerLinkActive="text-white">تسجيل</a>
+          </li>
+
+          <li *ngIf="user!==null">
+            <p class="bg-primary text-white rounded fs-4 p-2">{{user?.userName}}</p>
+          </li>
+
+          
+        </ul>
+     
+      </div>
+    </div>
+  </nav>

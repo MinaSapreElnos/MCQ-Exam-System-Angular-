@@ -1,0 +1,51 @@
+
+<div class="login container w-75 my-5 shadow-lg p-5">
+    <div class="text-center loginhead">
+        <h2>Login</h2>
+    </div>
+    <form  [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="row">
+            
+            <div class="col-sm-12 mb-3">        
+                <mat-radio-group  formControlName="type"  > 
+                    <mat-radio-button value="students" class="w-25" color="primary" (change)="getRole('students')" >طالب</mat-radio-button>
+                    <mat-radio-button value="doctor" class="w-25" color="primary"  (change)="getRole('doctor')">دكتور</mat-radio-button>
+                </mat-radio-group>
+            </div>
+
+            <div class="col-md-6 col-sm-12">          
+                <mat-form-field appearance="outline" color="warn" class="w-75">                    
+                    <mat-label>الايميل</mat-label>
+                    <input matInput type="email" formControlName="email" [ngClass]="{
+                        'is-valid':!email?.errors&& email?.touched,
+                        'is-invalid':email?.errors&& email?.touched
+                    }" >
+                    <ul class="alert alert-danger invalid-feedback list-unstyled">
+                        <li *ngIf="email?.getError('required')">الايميل مطلوب</li>
+                        <li *ngIf="email?.getError('email')">الايميل غير صحيح</li>
+                    </ul>
+                </mat-form-field>
+                
+                
+            </div>
+
+            <div class="col-md-6 col-sm-12">
+                <mat-form-field appearance="outline" color="warn" class="w-75">
+                    <mat-label>كلمة المرور</mat-label>
+                    <input matInput type="password" formControlName="password" [ngClass]="{
+                        'is-valid':!password?.errors&& password?.touched,
+                        'is-invalid':password?.errors&& password?.touched
+                    }">
+                    <ul class="alert alert-danger invalid-feedback list-unstyled">
+                        <li *ngIf="password?.getError('required')">كلمه السر مطلوب</li>
+                        <li *ngIf="password?.getError('pattern')">حد اقصي 6 ارقام</li>
+                    </ul>  
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="text-right loginfoot">
+            <a routerLink="/register" color="primary">انشاء حساب ؟</a>
+            <button mat-raised-button color="primary"  >تسجيل الدخول</button>
+        </div>
+     </form>
+</div>

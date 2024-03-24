@@ -1,0 +1,97 @@
+<!-- <section class="container">
+    <h2 class="text-center mb-5 fs-2">Register</h2>
+    <div class="row g-3 shadow">
+        <form [formGroup]="registerForm" (ngSubmit)="submit()">
+            <div class="col-md-6 m-auto ">
+                <label class="form-label fs-5">الاسم</label>
+                <input class="form-control" type="text"  formControlName="userName" [ngClass]="{
+                    'is-valid':!userName?.errors&& userName?.touched,
+                    'is-invalid':userName?.errors&& userName?.touched
+                }">
+                <ul class="alert alert-danger invalid-feedback list-unstyled">
+                    <li *ngIf="userName?.getError('required')">الاسم مطلوب</li>
+                </ul>
+            </div>
+    
+            <div class="col-md-6 m-auto pt-4">
+                <label class="form-label fs-5" >الايميل</label>
+                <input class="form-control" type="email" formControlName="email" [ngClass]="{
+                    'is-valid':!email?.errors&& email?.touched,
+                    'is-invalid':email?.errors&& email?.touched
+                }">
+                <ul class="alert alert-danger invalid-feedback list-unstyled">
+                    <li *ngIf="email?.getError('required')">الايميل مطلوب</li>
+                    <li *ngIf="email?.getError('email')">الايميل غير صحيح</li>
+                </ul>
+            </div>
+    
+            <div class="col-md-6 m-auto pt-4">
+                <label class="form-label fs-5">كلمة السر </label>
+                <input class="form-control" type="password" formControlName="password" [ngClass]="{
+                    'is-valid':!password?.errors&& password?.touched,
+                    'is-invalid':password?.errors&& password?.touched
+                }">
+                <ul class="alert alert-danger invalid-feedback list-unstyled">
+                    <li *ngIf="password?.getError('required')">كلمه السر مطلوب</li>
+                    <li *ngIf="password?.getError('pattern')">حد اقصي 6 ارقام</li>
+                </ul>
+            </div>
+    
+            <div class="col-md-6 m-auto pt-4">
+                <label class="form-label fs-5">تاكيد كلمة السر </label>
+                <input class="form-control" type="password" formControlName="confirmPassword" [ngClass]="{
+                    'is-valid':!confirmPassword?.errors&& confirmPassword?.touched,
+                    'is-invalid':confirmPassword?.errors&& confirmPassword?.touched
+                }">
+                <ul class="alert alert-danger invalid-feedback list-unstyled">
+                    <li *ngIf="confirmPassword?.getError('required')">كلمه السر مطلوب</li>
+                    <li *ngIf="confirmPassword?.getError('pattern')">حد اقصي 6 ارقام</li>
+                </ul>
+            </div>
+    
+            <button class="btn btn-primary text-dark col-md-3 d-block m-auto mt-3 mb-3" [disabled]="registerForm.invalid ||registerForm.value.confirmPassword !==registerForm.value.password ">انشاء حساب </button>
+        </form>
+    </div>
+</section> -->
+
+<div class="register">
+    <div class="text-center registhead">
+        <h2>Register</h2>
+    </div>
+    <form [formGroup]="registerForm">
+        <div class="row ">
+            <div class="col-md-6 col-sm-12">
+                <mat-form-field appearance="outline" color="warn" class="w-75">
+                    <mat-label>الاسم</mat-label>
+                    <input matInput type="text" formControlName="userName" >
+                    <!-- <mat-hint color="warn">must more than 5</mat-hint> -->
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-6 col-sm-12">          
+                <mat-form-field appearance="outline" color="warn" class="w-75">                    
+                    <mat-label>الايميل</mat-label>
+                    <input matInput type="email" formControlName="email" >
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-6 col-sm-12">
+                <mat-form-field appearance="outline" color="warn" class="w-75">
+                    <mat-label>كلمة المرور</mat-label>
+                    <input matInput type="password" formControlName="password" >
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-6 col-sm-12">             
+                <mat-form-field appearance="outline" color="warn" class="w-75">
+                    <mat-label>تاكيد كلمة المرور</mat-label>
+                    <input matInput type="password" formControlName="confirmPassword" >
+                </mat-form-field>
+            </div>
+        </div>
+      <div class="text-right registfoot">
+          <a routerLink="/login" color="primary">املك حساب بالفعل ؟</a>
+            <button mat-raised-button color="primary" [disabled]="registerForm.invalid ||registerForm.value.confirmPassword !==registerForm.value.password " (click)="submit()">انشاء الحساب</button>
+      </div>
+     </form>
+</div>

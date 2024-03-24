@@ -1,0 +1,108 @@
+{
+  "students": [
+    {
+      "userName": "mina",
+      "email": "mina@mina.com",
+      "password": "123456",
+      "subjects": [
+        {
+          "name": " math",
+          "id": 1,
+          "degree": 1
+        },
+        {
+          "name": " لغه عربيه",
+          "id": 2,
+          "degree": 1
+        }
+      ],
+      "id": 1
+    },
+    {
+      "userName": "student",
+      "email": "student@student.com",
+      "password": "123456",
+      "subjects": [
+        {
+          "name": " math",
+          "id": 1,
+          "degree": 1
+        },
+        {
+          "name": " علوم",
+          "id": 3,
+          "degree": 0
+        }
+      ],
+      "id": 2
+    }
+  ],
+  "doctor": [
+    {
+      "userName": "admin",
+      "email": "admin@admin.com",
+      "password": "123456",
+      "id": 1
+    }
+  ],
+  "login": [
+    {
+      "userName": "admin",
+      "role": "doctor",
+      "userID": 1,
+      "id": 1
+    }
+  ],
+  "subjects": [
+    {
+      "subjectName": " math",
+      "questions": [
+        {
+          "question": "5+5",
+          "answer1": "10",
+          "answer2": "20",
+          "answer3": "15",
+          "answer4": "1",
+          "correctAnswer": "10"
+        },
+        {
+          "question": "5*5",
+          "answer1": "44",
+          "answer2": "23",
+          "answer3": "5",
+          "answer4": "25",
+          "correctAnswer": "25"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "subjectName": " لغه عربيه",
+      "questions": [
+        {
+          "question": "تست",
+          "answer1": "تست",
+          "answer2": "تست",
+          "answer3": "تست",
+          "answer4": "تست",
+          "correctAnswer": "تست"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "subjectName": " علوم",
+      "questions": [
+        {
+          "question": "تست",
+          "answer1": "ستس",
+          "answer2": "ىسسسس",
+          "answer3": "سسس",
+          "answer4": "سسسس",
+          "correctAnswer": "ستس"
+        }
+      ],
+      "id": 3
+    }
+  ]
+}

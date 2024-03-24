@@ -1,0 +1,22 @@
+<section >
+  <table class="table container w-75 m-auto shadow-lg mt-5 ">
+    <thead>
+      <tr class="fs-5 table-primary">
+        <th scope="col">م</th>
+        <th scope="col">اسم الطالب </th>
+        <th scope="col">الماده </th>
+        <th scope="col">الدرجه</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let itam of dataTeble ; let index =index" class="fs-6">
+        <th scope="row">{{index+1}}</th>
+        <td>{{itam.name}}</td>
+        <td>{{itam.subjectName}}</td>
+        <td>{{itam.degree}}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+</section>
+
